@@ -52,6 +52,14 @@ RSpec.describe StringCalculator do
     it 'handles single char delimiter in brackets' do
       expect(calculator.add("//[*]\n1*2*3")).to eq(6)
     end
+
+    it 'handles multiple single char delimiters' do
+      expect(calculator.add("//[*][%]\n1*2%3")).to eq(6)
+    end
+
+    it 'handles multiple multi-char delimiters' do
+      expect(calculator.add("//[***][%%%]\n1***2%%%3")).to eq(6)
+    end
   end
 end
 
