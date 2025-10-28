@@ -1,35 +1,20 @@
-# String Calculator TDD Kata
+# String Calculator
 
-This is a Ruby implementation of the String Calculator TDD Kata from Incubyte.
+Working through the TDD kata from Incubyte's assessment. Building it step by step in Ruby with RSpec.
 
-## Requirements
+## What it does
 
-- Create a simple String calculator with a method signature: `int add(string numbers)`
-- Input: a string of comma-separated numbers
-- Output: an integer, sum of the numbers
+Simple string calculator that takes numbers and adds them up. Handles commas, newlines, custom delimiters, and throws errors for negative numbers.
 
-## Steps
-
-1. ✅ Create a method that returns 0 for empty string
-2. ✅ Handle single number
-3. ✅ Handle two comma-separated numbers
-4. ✅ Allow the method to handle any amount of numbers
-5. ✅ Allow the method to handle new lines between numbers (instead of commas)
-6. ✅ Support different delimiters
-7. ✅ Throw exception for negative numbers with exception message showing the negative number(s)
-
-## Setup
+## Running tests
 
 ```bash
 bundle install
-rspec
+bundle exec rspec
 ```
 
-## Test-Driven Development
+## How I built it
 
-This implementation follows TDD principles:
-- Red: Write a failing test
-- Green: Write the minimum code to pass
-- Refactor: Improve the code while keeping tests green
+Started with the simplest test - empty string returns 0. Then added one number, then two numbers. Kept going through each requirement step by step. Every test written first (failing), then just enough code to make it pass.
 
-Each TDD cycle is committed separately to show the evolution of the code.
+Each commit shows the progression. You can follow along the git history to see how the code evolved.
