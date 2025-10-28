@@ -11,12 +11,12 @@ This is a Ruby implementation of the String Calculator TDD Kata from Incubyte.
 ## Steps
 
 1. ✅ Create a method that returns 0 for empty string
-2. ⏳ Handle single number
-3. ⏳ Handle two comma-separated numbers
-4. ⏳ Allow the method to handle any amount of numbers
-5. ⏳ Allow the method to handle new lines between numbers (instead of commas)
-6. ⏳ Support different delimiters
-7. ⏳ Throw exception for negative numbers with exception message showing the negative number(s)
+2. ✅ Handle single number
+3. ✅ Handle two comma-separated numbers
+4. ✅ Allow the method to handle any amount of numbers
+5. ✅ Allow the method to handle new lines between numbers (instead of commas)
+6. ✅ Support different delimiters
+7. ✅ Throw exception for negative numbers with exception message showing the negative number(s)
 
 ## Setup
 
