@@ -2,19 +2,25 @@ class StringCalculator
   def add(numbers)
     return 0 if numbers.empty?
     
-    delimiter = ','
+    delimiters = [',', "\n"]
     if numbers.start_with?('//')
       parts = numbers.split("\n", 2)
       delim_part = parts[0][2..-1]
-      if delim_part.start_with?('[') && delim_part.end_with?(']')
-        delimiter = delim_part[1..-2]
+      
+      if delim_part.start_with?('[')
+        delimiters = delim_part.scan(/\[([^\]]+)\]/).flatten
+        if delimiters.empty?
+          delimiters = [delim_part]
+        end
       else
-        delimiter = delim_part
+        delimiters = [delim_part]
       end
+      
       numbers = parts[1]
     end
     
-    nums = numbers.split(/[,\n#{Regexp.escape(delimiter)}]/).map(&:to_i)
+    regex_pattern = /#{delimiters.map { |d| Regexp.escape(d) }.join('|')}/
+    nums = numbers.split(regex_pattern).map(&:to_i)
     negatives = nums.select(&:negative?)
     
     if negatives.any?
