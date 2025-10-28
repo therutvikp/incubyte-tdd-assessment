@@ -9,7 +9,14 @@ class StringCalculator
       numbers = parts[1]
     end
     
-    numbers.split(/[,\n#{Regexp.escape(delimiter)}]/).map(&:to_i).sum
+    nums = numbers.split(/[,\n#{Regexp.escape(delimiter)}]/).map(&:to_i)
+    negatives = nums.select(&:negative?)
+    
+    if negatives.any?
+      raise ArgumentError, "negative numbers not allowed #{negatives.join(',')}"
+    end
+    
+    nums.sum
   end
 end
 
