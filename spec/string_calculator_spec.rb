@@ -20,6 +20,10 @@ RSpec.describe StringCalculator do
     it 'returns sum for multiple comma-separated numbers' do
       expect(calculator.add('1,2,3,4,5')).to eq(15)
     end
+
+    it 'returns sum for numbers separated by newlines' do
+      expect(calculator.add("1\n2,3")).to eq(6)
+    end
   end
 end
 
