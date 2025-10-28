@@ -44,6 +44,14 @@ RSpec.describe StringCalculator do
     it 'only adds numbers up to 1000' do
       expect(calculator.add('1,1000,1001,2')).to eq(1003)
     end
+
+    it 'handles multi-character delimiters in brackets' do
+      expect(calculator.add("//[***]\n1***2***3")).to eq(6)
+    end
+
+    it 'handles single char delimiter in brackets' do
+      expect(calculator.add("//[*]\n1*2*3")).to eq(6)
+    end
   end
 end
 
