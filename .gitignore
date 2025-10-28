@@ -10,7 +10,7 @@
 /test/version_tmp/
 /tmp/
 .bundle/
-vendor/bundle
+vendor/
 .rvmrc
 .ruby-version
 .ruby-gemset
