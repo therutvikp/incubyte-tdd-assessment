@@ -1,10 +1,19 @@
 # String Calculator
 
-Working through the TDD kata from Incubyte's assessment. Building it step by step in Ruby with RSpec.
+TDD kata from Incubyte's assessment. Full implementation in Ruby with RSpec.
 
 ## What it does
 
-Simple string calculator that takes numbers and adds them up. Handles commas, newlines, custom delimiters, and throws errors for negative numbers.
+Takes a string of numbers and adds them up. Handles:
+- Empty strings (returns 0)
+- Single numbers
+- Multiple numbers separated by commas
+- Newlines as separators
+- Custom delimiters
+- Multi-character delimiters with brackets
+- Multiple delimiters at once
+- Errors on negative numbers
+- Ignores numbers over 1000
 
 ## Running tests
 
@@ -13,8 +22,6 @@ bundle install
 bundle exec rspec
 ```
 
-## How I built it
+## Built with TDD
 
-Started with the simplest test - empty string returns 0. Then added one number, then two numbers. Kept going through each requirement step by step. Every test written first (failing), then just enough code to make it pass.
-
-Each commit shows the progression. You can follow along the git history to see how the code evolved.
+Started with empty string returns 0, then kept adding one test at a time. Every test written first (failing), then just enough code to pass. Follow along the git history to see how it evolved.
