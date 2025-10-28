@@ -33,4 +33,3 @@ This implementation follows TDD principles:
 - Refactor: Improve the code while keeping tests green
 
 Each TDD cycle is committed separately to show the evolution of the code.
-
