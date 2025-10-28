@@ -5,7 +5,12 @@ class StringCalculator
     delimiter = ','
     if numbers.start_with?('//')
       parts = numbers.split("\n", 2)
-      delimiter = parts[0][2..-1]
+      delim_part = parts[0][2..-1]
+      if delim_part.start_with?('[') && delim_part.end_with?(']')
+        delimiter = delim_part[1..-2]
+      else
+        delimiter = delim_part
+      end
       numbers = parts[1]
     end
     
